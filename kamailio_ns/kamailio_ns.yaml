@@ -1,0 +1,30 @@
+nsd:
+  nsd:
+  - description: Kamailio Server and Sipp Client
+    df:
+    - id: default-df
+      virtual-link-profile:
+      - id: vlp-datanet
+        virtual-link-desc-id: datanet
+        virtual-link-protocol-data:
+          associated-layer-protocol: ipv4
+          l3-protocol-data:
+            ip-version: ipv4
+            cidr: 192.168.10.0/24
+      vnf-profile:
+      - id: kamailio_cnf
+        virtual-link-connectivity:
+        - constituent-cpd-id:
+          - constituent-base-element-id: kamailio_cnf
+            constituent-cpd-id: mgmt-ext
+          virtual-link-profile-id: mgmtnet
+        vnfd-id: kamailio_cnf
+    id: kamailio_ns
+    name: kamailio_ns
+    version: '1.0'
+    virtual-link-desc:
+    - id: mgmtnet
+      mgmt-network: true
+    - id: datanet
+    vnfd-id:
+    - kamailio_cnf

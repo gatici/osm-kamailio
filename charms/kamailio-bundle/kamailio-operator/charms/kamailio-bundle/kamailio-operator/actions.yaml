@@ -1,0 +1,10 @@
+# Copyright 2021 Gabor Meszaros
+# See LICENSE file for licensing details.
+
+# Service lifecycle
+restart:
+  description: Restart Kamailio service
+start:
+  description: Start Kamailio service
+stop:
+  description: Stop Kamailio service

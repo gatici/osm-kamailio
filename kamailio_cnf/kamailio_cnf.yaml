@@ -1,0 +1,59 @@
+vnfd:
+  df:
+  - id: default-df
+    kdu-resource-profile:
+      - id: sipp-scale
+        kdu-name: native-kdu
+        resource-name: sipp
+        min-number-of-instances: 1
+        max-number-of-instances: 5
+    scaling-aspect:
+      - id: sipp-scale
+        name: sipp-scale
+        max-scale-level: 10
+        aspect-delta-details:
+          deltas:
+            - id: kdu-delta
+              kdu-resource-delta:
+                - id: sipp-scale
+                  number-of-instances: 1
+    lcm-operations-configuration:
+      operate-vnf-op-config:
+        day1-2:
+          - id: native-kdu
+            config-primitive:
+            - name: options
+              parameter:
+              - name: ip
+                data-type: STRING
+                default-value: sipp
+              - name: port
+                data-type: STRING
+                default-value: sipp
+            - name: restart
+              parameter:
+              - name: application-name
+                data-type: STRING
+                default-value: kamailio
+            - name: start
+              parameter:
+              - name: application-name
+                data-type: STRING
+                default-value:  kamailio
+            - name: stop
+              parameter:
+              - name: application-name
+                data-type: STRING
+                default-value:  kamailio
+  ext-cpd:
+  - id: mgmt-ext
+    k8s-cluster-net: mgmtnet
+  id: kamailio_cnf
+  k8s-cluster:
+    nets:
+    - id: mgmtnet
+  kdu:
+  - name: native-kdu
+    juju-bundle: bundle.yaml
+  mgmt-cp: mgmt-ext
+  product-name: kamailio_cnf

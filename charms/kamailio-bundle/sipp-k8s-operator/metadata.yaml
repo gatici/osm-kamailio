@@ -1,0 +1,19 @@
+# Copyright 2022 David Garcia
+# See LICENSE file for licensing details.
+
+name: sipp-k8s
+display-name: SIPP K8s
+description: |
+  Operator charm for SIPP container image
+summary: |
+  Operator charm for SIPP container image
+
+containers:
+  sipp:
+    resource: sipp-image
+
+resources:
+  sipp-image:
+    type: oci-image
+    description: OCI image for sipp (grigiu/sipp)
+    upstream-source: grigiu/sipp:latest

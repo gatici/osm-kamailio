@@ -1,0 +1,24 @@
+bundle: kubernetes
+applications:
+  kamailio:
+    charm: ./kamailio-operator/kamailio.charm
+    scale: 1
+    trust: true
+    options:
+      sip-domain: "localhost"
+      external-url: ""
+      tls-secret-name: ""
+    resources:
+      kamailio-image: kamailio/kamailio:5.3.3-stretch
+  sipp:
+    charm: ./sipp-k8s-operator/sipp-k8s.charm
+    scale: 1
+    trust: true
+    options:
+    resources:
+      sipp-image: grigiu/sipp:latest
+
+
+
+
+

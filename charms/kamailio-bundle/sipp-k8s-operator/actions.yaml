@@ -1,0 +1,10 @@
+options:
+  params:
+    ip:
+      description: IP of the SIP server
+      type: string
+    port:
+      description: Port of the SIP server
+      type: integer
+  required:
+    - ip
