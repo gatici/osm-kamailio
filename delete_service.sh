@@ -1,1 +1,1 @@
-osm ns-delete kamailio_service
+osm ns-delete kamailio_service;
