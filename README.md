@@ -15,13 +15,13 @@ git clone https://github.com/gatici/osm-kamailio.git && pushd osm-kamailio
 ./charms/kamailio-bundle/clone_charms.sh
 ```
 
-### Build the charms under charms folder.
+## Build the charms under charms folder.
 
 ```bash 
 ./charms/kamailio-bundle/build.sh
 ``` 
 
-### Deploy the Charms with Juju (Optional)
+## Deploy the Charms with Juju (Optional)
 This process could be done after charms are cloned and built according to main guide.
 
 ## Prepare environment for Juju Deployment (Optional)
@@ -38,7 +38,7 @@ Deploy bundle:
 ./charms/kamailio-bundle/deploy_bundle.sh
 ```
 
-### Copy built charms into kamailio_cnf.
+## Copy built charms into kamailio_cnf.
 
 Copy charms in to CNF folder in order to instantiate a Network Service through OSM:
 
@@ -48,17 +48,17 @@ Copy charms in to CNF folder in order to instantiate a Network Service through O
 
 ## Onboarding through OSM
 
-### Upload Packages
+## Upload Packages
 ```bash
 ./upload.sh
 ```
 
-### Create Service
+## Create Service
 ```bash
 ./onboard.sh
 ```
 
-### Remove Packages
+## Remove Packages
 ```bash
 ./remove_packages.sh
 ```
