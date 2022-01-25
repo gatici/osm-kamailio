@@ -2,11 +2,11 @@
 
 function build() {
     charm=$1
-    cd $charm-operator/
+    pushd $charm-operator/
     charmcraft clean
     charmcraft build
     mv ${charm}_ubuntu-20.04-amd64.charm $charm.charm
-    cd ..
+    popd
 }
 
 pushd charms/kamailio-bundle
