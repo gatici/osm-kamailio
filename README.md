@@ -54,8 +54,9 @@ Copy charms in to CNF folder in order to instantiate a Network Service through O
 ```
 
 ## Create Service
+vim_account_name=your_prefered_vim_account
 ```bash
-./onboard.sh
+./onboard.sh $vim_accunt_name
 ```
 
 ## Remove Packages
