@@ -1,7 +1,7 @@
 bundle: kubernetes
 applications:
   kamailio:
-    charm: ./kamailio-operator/kamailio.charm
+    charm: ./kamailio-k8s-operator/kamailio-k8s.charm
     scale: 1
     trust: true
     options:
