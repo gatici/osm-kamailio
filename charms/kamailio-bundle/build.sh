@@ -12,7 +12,9 @@ function build() {
 pushd charms/kamailio-bundle
     charms="kamailio-k8s sipp-k8s"
     for charm in $charms; do
-        build $charm &
+        build $charm
+        wait
+    
     done
-    wait
+
 popd
